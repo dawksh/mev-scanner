@@ -34,7 +34,7 @@ const pairABIJSON = `[{
 }]`
 
 var syncTopic = common.HexToHash(
-	"0x1c411e9a96e0b58e4f3f0a5b2b5c2e5e1e8b1b9eebf5f9d8e9e9e9e9e9e9e9e9", // Sync event topic hash
+	"0x1c411e9a96e071241c2f21f7726b17ae89e3cab4c78be50e062b03a9fffbbad1", // Sync event topic hash
 )
 
 func InitializeState(
@@ -67,9 +67,9 @@ func InitializeState(
 	}
 
 	var output struct {
-		Reserve0 *big.Int
-		Reserve1 *big.Int
-		Time     uint32
+		Reserve0           *big.Int
+		Reserve1           *big.Int
+		BlockTimestampLast uint32
 	}
 	err = parsedABI.UnpackIntoInterface(
 		&output,
